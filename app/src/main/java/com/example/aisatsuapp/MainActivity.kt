@@ -2,14 +2,14 @@ package com.example.aisatsuapp
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-class MainActivity : AppCompatActivity() , View.OnClickListener {
+class MainActivity : AppCompatActivity() ,View.OnClickListener {
 
     var hour : Int = 0
     var minute : Int = 0
@@ -43,17 +43,17 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
     private fun showDatePickerDialog() {
         val c = Calendar.getInstance()
         val timePickerDialog = TimePickerDialog(
-                this,
-                TimePickerDialog.OnTimeSetListener() { _, hourOfDay, minute ->
-                    this.hour = hourOfDay
-                    this.minute = minute
+            this,
+            TimePickerDialog.OnTimeSetListener() { _, hourOfDay, minute ->
+                this.hour = hourOfDay
+                this.minute = minute
 
 
 
-                },
-                c.get(Calendar.HOUR_OF_DAY),
-                c.get(Calendar.MINUTE),
-                true)
+            },
+            c.get(Calendar.HOUR_OF_DAY),
+            c.get(Calendar.MINUTE),
+            true)
 
         timePickerDialog.show()
 
